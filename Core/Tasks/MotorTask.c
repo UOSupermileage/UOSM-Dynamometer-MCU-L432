@@ -36,7 +36,7 @@ const osThreadAttr_t MotorTask_attributes = {
 
 PUBLIC void InitMotorTask(void)
 {
-#ifdef MOTOR_PROFILE
+#ifdef PROFILE_MOTOR
 	MotorTaskHandle = osThreadNew(MotorTask, NULL, &MotorTask_attributes);
 #endif
 }
