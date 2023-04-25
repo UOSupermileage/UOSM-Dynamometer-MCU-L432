@@ -1,5 +1,5 @@
 - [Home](/)
 - [Hardware Setup](HardwareSetup.md)
-- [Dynamo Parameters](DynamoParameters.md)
+- [Motor Parameters](MotorParameters.md)
 - [Tasks](Tasks.md)
 - [Debugging](Debugging.md)
