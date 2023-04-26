@@ -3,3 +3,4 @@
 - [Motor Parameters](MotorParameters.md)
 - [Tasks](Tasks.md)
 - [Debugging](Debugging.md)
+- [Dev Diary](DevDiary.md)

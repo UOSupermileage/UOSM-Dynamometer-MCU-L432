@@ -9,12 +9,8 @@
 #include "InternalCommsTask.h"
 #include "InternalCommsModule.h"
 #include "CANMessageLookUpModule.h"
-#include "SerialDebugDriver.h"
 #include "Profiles.h"
 #include "DataAggregationModule.h"
-
-// Function alias - replace with the driver api
-#define DebugPrint(...) SerialPrintln(__VA_ARGS__)
 
 #define STACK_SIZE 128 * 8
 #define INTERNAL_COMMS_TASK_PRIORITY (osPriority_t) osPriorityRealtime3
@@ -45,12 +41,6 @@ PRIVATE void InternalCommsTask(void *argument)
 {
 	uint32_t cycleTick = osKernelGetTickCount();
 	DebugPrint("%s icomms", ICT_TAG);
-
-	const ICommsMessageInfo *errorInfo = CANMessageLookUpGetInfo(ERROR_DATA_ID);
-	const ICommsMessageInfo *eventInfo = CANMessageLookUpGetInfo(EVENT_DATA_ID);
-
-	uint8_t throttleErrorBroadcastCounter = 0;
-	uint8_t deadmanBroadcastCounter = 0;
 
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
 
